@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Card } from 'components/card';
+import { FeedbackForm } from 'components/feedback-form';
 import { RandomQuote } from 'components/random-quote';
 import { Markdown } from 'components/markdown';
 import { ContextAlert } from 'components/context-alert';
@@ -14,45 +15,31 @@ The card below is rendered on the server based on the value of \`process.env.CON
 ([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
 `;
 
-const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
-`;
-
-const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
-`;
-
 const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
-        <main className="flex flex-col gap-8 sm:gap-16">
-            <section className="flex flex-col items-start gap-3 sm:gap-4">
-                <ContextAlert />
-                <h1 className="mb-0">OnlySaylor</h1>
-                <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
-                    className="btn btn-lg btn-primary sm:btn-wide"
-                >
-                    Read the Docs
-                </Link>
-            </section>
-            {!!ctx && (
+        <main className="flex flex-row flex-wrap grow gap-8 md:flex-col md:flex-nowrap">
+            <div className="flex flex-col grow md:flex-row">
+                <section className="flex flex-col items-start justify-center gap-3 w-full h-full p-6 text-white [text-shadow:_0_.125em_.25em_rgba(0,0,0,0.2)] bg-gradient-to-br from-primary/80 to-primary md:gap-6 md:p-12">
+                    <div className="flex flex-col gap-3 md:gap-6 w-full max-w-md mx-auto">
+                        <ContextAlert />
+                        <h1 className="mb-0">🪙 OnlySaylor</h1>
+                        <p className="text-[1.75rem] leading-[1.5]">Sign up to support your favorite digital Saylor creators</p>
+                    </div>
+                </section>
+                <section className="flex flex-col items-start justify-center gap-3 w-full h-full p-6 sm:gap-6 md:p-12">
+                    <div className="flex flex-col gap-3 md:gap-6 w-full max-w-md mx-auto">
+                        <FeedbackForm />
+                    </div>
+                </section>
+            </div>
+            {/*!!ctx && (
                 <section className="flex flex-col gap-4">
                     <Markdown content={contextExplainer} />
                     <RuntimeContextCard />
                 </section>
-            )}
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
-            </section>
-            {/* !!cards?.length && <CardsGrid cards={cards} /> */}
+            )*/}
         </main>
     );
 }

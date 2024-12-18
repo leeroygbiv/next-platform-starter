@@ -32,19 +32,19 @@ export function FeedbackForm() {
     };
 
     return (
-        <div className="w-full md:max-w-md">
-            <Card title="Leave Feedback">
+        <div className="w-full mx-auto md:max-w-md">
+            <Card title="Subscribe for Saylor updates" text="Sign up to receive updates on your favorite Saylor creators">
                 <form
                     name="feedback"
                     onSubmit={handleFormSubmit}
                     className="text-black flex flex-col gap-3 align-center"
                 >
                     <input type="hidden" name="form-name" value="feedback" />
-                    <input name="name" type="text" placeholder="Name" required className="input input-bordered" />
-                    <input name="email" type="text" placeholder="Email (optional)" className="input input-bordered" />
-                    <input name="message" type="text" placeholder="Message" required className="input input-bordered" />
+                    <input name="name" type="text" placeholder="Name (optional)" className="input input-bordered" />
+                    <input name="email" type="text" placeholder="Email" required className="input input-bordered" />
+                    {/*<input name="message" type="text" placeholder="Message" required className="input input-bordered" />*/}
                     <button className="btn btn-primary" type="submit" disabled={status === 'pending'}>
-                        Submit
+                        Sign up
                     </button>
                     {status === 'ok' && (
                         <div className="alert alert-success">
