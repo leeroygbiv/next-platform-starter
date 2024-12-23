@@ -26,7 +26,7 @@ export default function Page() {
                     <div className="flex flex-col gap-3 lg:gap-6 w-full max-w-md mx-auto">
                         <ContextAlert />
                         <h1 className="flex items-center gap-4 mb-0">
-                            <Image class="w-16" src="/images/btc-reverse.svg" alt="" width={100} height={100} />
+                            <Image className="w-16" src="/images/btc-reverse.svg" alt="" width={100} height={100} />
                             <span>OnlySaylor</span>
                         </h1>
                         <p className="text-[1.75rem] leading-[1.5]">Support your favorite Saylor</p>
