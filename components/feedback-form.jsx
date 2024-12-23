@@ -33,7 +33,7 @@ export function FeedbackForm() {
 
     return (
         <div className="w-full mx-auto md:max-w-md">
-            <Card title="Subscribe for Saylor updates" text="Sign up to receive updates on your favorite Saylor creators">
+            <Card title="Subscribe" text="Sign up to receive Saylor updates">
                 <form
                     name="feedback"
                     onSubmit={handleFormSubmit}
