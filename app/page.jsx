@@ -29,7 +29,7 @@ export default function Page() {
                             <Image className="w-16" src="/images/btc-reverse.svg" alt="" width={100} height={100} />
                             <span>OnlySaylor</span>
                         </h1>
-                        <p className="text-[1.75rem] leading-[1.5]">Support your favorite Saylor</p>
+                        <p className="text-[1.75rem] leading-[1.5]">Use Bitcoin to support your favorite Saylor content</p>
                     </div>
                 </section>
                 <section className="flex flex-col items-start justify-center gap-3 w-full h-full p-6 sm:gap-6 lg:p-12 lg:pr-[10%]">
